@@ -1,4 +1,4 @@
-# BACKLINE — Static Website
+# BACKLINE - Static Website
 
 BACKLINE is a static community-platform website built with plain HTML, CSS, and vanilla JavaScript.
 

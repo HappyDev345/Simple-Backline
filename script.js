@@ -67,6 +67,14 @@
     if (!dialog.open) dialog.showModal();
   }
 
+  const clean = text => text.replace(/\s+/g, ' ').trim();
+
+  function searchableText(card) {
+    const copy = card.cloneNode(true);
+    copy.querySelectorAll('button').forEach(button => button.remove());
+    return clean(copy.textContent).toLowerCase();
+  }
+
   function cardType(card) {
     if (card.matches('.gig-card')) return 'production';
     if (card.matches('.crew-card')) return 'crew';
@@ -135,7 +143,7 @@
 
     cards.forEach(card => {
       const type = cardType(card);
-      const matches = (!query || card.textContent.toLowerCase().includes(query)) &&
+      const matches = (!query || card.dataset.searchText.includes(query)) &&
         (selectedType === 'all' || selectedType === type) &&
         (!savedOnly || savedIds.has(card.dataset.directoryId));
       card.hidden = !matches;
@@ -167,11 +175,17 @@
     const title = card.querySelector('h3')?.textContent.trim() || 'BackLine listing';
     const detailSelectors = {
       production: ['.gig-role', '.venue-name', '.gig-meta', '.crew-chip'],
-      crew: ['.crew-role', '.crew-location', '.skill-list', '.crew-bottom'],
+      crew: ['.crew-role', '.crew-location', '.skill-list', '.crew-bottom span'],
       call: ['.call-details', '.call-skills']
     };
     const details = detailSelectors[type]
-      .flatMap(selector => [...card.querySelectorAll(selector)].map(element => element.textContent.trim()))
+      .flatMap(selector => [...card.querySelectorAll(selector)].map(element => {
+        if (element.matches('.skill-list, .call-details')) {
+          const separator = element.matches('.call-details') ? ' · ' : ', ';
+          return [...element.children].map(child => clean(child.textContent)).filter(Boolean).join(separator);
+        }
+        return clean(element.textContent);
+      }))
       .filter(Boolean);
     const description = type === 'crew'
       ? 'Sample crew profile'
@@ -192,6 +206,7 @@
     showToast('Saved listings could not be loaded from this browser.');
   }
 
+  cards.forEach(card => { card.dataset.searchText = searchableText(card); });
   cards.forEach(addSaveButton);
   addEmptyMessages();
   updateSaveButtons();
@@ -227,6 +242,10 @@
       filterListings();
       showToast(savedIds.has(id) ? 'Listing saved on this device.' : 'Listing removed from saved items.');
       return;
+    }
+
+    if (navLinks.classList.contains('nav-links-open') && !event.target.closest('#navLinks, #menuToggle')) {
+      setMenuOpen(false);
     }
 
     const actionButton = event.target.closest('.action-button');
