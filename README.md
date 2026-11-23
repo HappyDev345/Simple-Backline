@@ -45,6 +45,10 @@ Keep the three website files together and preserve their filenames so the styles
 - **Images or fonts do not load:** Check your internet connection and whether the remote resource is still available.
 - **Changes are not visible:** Save the files and refresh the browser. A hard refresh may clear cached styles or scripts.
 
-## License and assets
+## Licence
 
-No license or ownership terms are specified here. Check the original project and the terms for any third-party images, fonts, or other assets before redistributing the website.
+No licence has been chosen yet. Until one is added, all rights are reserved by the author.
+
+## Author
+
+Built by Luke for Multimedia AT1
