@@ -67,3 +67,32 @@ For AV pros who care about connection over noise, that’s a promise we’re kee
 - **Screenshots:** Use your `index.html` file as a background in the intro and outro to establish brand identity.
 - **Code B-roll:** When talking about Supabase/Vercel, insert short overlays showing the code from `App.jsx` (routing section) or database queries. This proves the technical foundation.
 - **Tone:** Keep it professional but human. It’s not just “tech,” it’s people connecting.
+
+
+PROJECT IDEA — 0:00–0:20
+
+My major project concept is BACKLINE, a dedicated online platform designed to bring people in the audiovisual and creative industries together. The idea is to create a space where AV technicians, lighting designers, sound engineers and other creatives can connect, showcase their work and discover opportunities.
+
+RESEARCH — 0:20–0:40
+
+Through my research into platforms such as LinkedIn, Behance and Discord, I explored different approaches to professional networking, creative portfolios and online communities. This helped me identify features that could be brought together into one platform specifically for the AV industry.
+
+IDEA GENERATION — 0:40–1:00
+
+I began developing the concept through initial sketches and layout ideas, exploring how the homepage could introduce the platform and communicate its purpose. I experimented with different page structures and visual styles before developing the overall BACKLINE design.
+
+EXPERIMENT 1 — HTML — 1:00–1:28
+
+My first experiment focused on HTML and developing the structural layout of the webpage. One challenge was organising the increasing amount of content into clear sections while keeping the code manageable. I addressed this by using consistent section structures, semantic elements and IDs for navigation. This created a foundation for the rest of the website.
+
+EXPERIMENT 2 — CSS — 1:28–1:56
+
+My second experiment focused on CSS and visual design. I explored typography, colour, spacing and different layout techniques. One challenge was maintaining a consistent design across the different sections while also making the website responsive. I addressed this using reusable styling rules, CSS Grid, Flexbox and responsive media queries. This helped create a more cohesive visual identity.
+
+EXPERIMENT 3 — JAVASCRIPT — 1:56–2:24
+
+My third experiment focused on JavaScript and adding interactive features. I developed a mobile navigation menu, search and filtering, interactive dialogs and saved listings. One challenge was keeping these features working together and maintaining their state. I used event listeners, separate functions and local storage to manage these interactions. The result was a more interactive frontend, although it is not yet connected to a backend.
+
+CONCLUSION — 2:24–2:30
+
+Overall, these experiments developed my skills in web design and programming, providing a foundation for the fully functioning BACKLINE platform I intend to create for my Major Project.
