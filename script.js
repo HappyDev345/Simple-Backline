@@ -223,6 +223,11 @@
     openDialog(button.dataset.dialog);
   }));
 
+  document.querySelectorAll('[data-toast]').forEach(button => button.addEventListener('click', event => {
+    event.preventDefault();
+    showToast(button.dataset.toast);
+  }));
+
   document.addEventListener('click', event => {
     const saveButton = event.target.closest('[data-save-id]');
     if (saveButton) {
