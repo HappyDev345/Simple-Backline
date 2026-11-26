@@ -182,7 +182,7 @@
     const details = detailSelectors[type]
       .flatMap(selector => [...card.querySelectorAll(selector)].map(element => {
         if (element.matches('.skill-list, .call-details')) {
-          const separator = element.matches('.call-details') ? ' · ' : ', ';
+          const separator = ', ';
           return [...element.children].map(child => clean(child.textContent)).filter(Boolean).join(separator);
         }
         return clean(element.textContent);
@@ -194,7 +194,7 @@
         ? 'Sample crew call'
         : 'Featured production';
     const actionLabel = type === 'call' ? 'Join to apply' : type === 'crew' ? 'Join to connect' : 'Join BackLine';
-    openDialog('detail', { title, copy: [description, ...details].join(' · '), actionLabel });
+    openDialog('detail', { title, copy: [description, ...details].join('. '), actionLabel });
   }
 
   try {
