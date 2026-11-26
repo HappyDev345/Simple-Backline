@@ -23,7 +23,8 @@ img { display: block; max-width: 100%; }
 .nav-wrap { position: absolute; inset: 0 0 auto; z-index: 50; border-bottom: 1px solid rgba(255,255,255,.08); }
 .nav-inner { height: 78px; display: flex; align-items: center; justify-content: space-between; }
 .brand, .footer-brand { display: flex; align-items: center; gap: 11px; color: white; font: 700 17px/1 "Space Grotesk", sans-serif; letter-spacing: .08em; }
-.brand-mark { width: 36px; height: 36px; display: grid; place-items: center; color: #75a7ff; border: 1px solid rgba(117,167,255,.4); border-radius: 11px; background: linear-gradient(145deg, rgba(81,110,255,.22), rgba(127,68,255,.08)); }
+.brand-mark { position: relative; overflow: hidden; width: 36px; height: 36px; display: grid; place-items: center; color: #75a7ff; border: 1px solid rgba(117,167,255,.4); border-radius: 11px; background: linear-gradient(145deg, rgba(81,110,255,.22), rgba(127,68,255,.08)); }
+.brand-mark img { position: absolute; top: -100%; left: -147%; width: 394%; max-width: none; }
 .nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-link { color: #aeb5c6; font-size: 14px; font-weight: 500; transition: color .2s ease; }
 .nav-link:hover { color: white; }
