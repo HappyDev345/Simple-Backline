@@ -24,6 +24,7 @@
     discussion: ['Join the discussion', 'Introduce yourself to the backstage community. This demo form does not send or store your details.'],
     messages: ['Messages', 'Sign in or join BackLine to connect with other live-event professionals.'],
     about: ['About BackLine', 'A community built for the people who make live events happen.'],
+    guidelines: ['Community Guidelines', 'BackLine is currently a static demonstration website. The discussion and community features are not connected to a live forum or moderation service. In the intended community, members should communicate respectfully, share accurate information, protect personal and venue details, and avoid harassment or spam.'],
     privacy: ['Privacy', 'This static demo does not send or store the details entered here.']
   };
 
@@ -42,7 +43,7 @@
 
   function openDialog(type, detail) {
     const copy = messages[type] || [type, 'Explore the BackLine community.'];
-    const needsForm = !['about', 'privacy', 'detail'].includes(type);
+    const needsForm = !['about', 'guidelines', 'privacy', 'detail'].includes(type);
     const submitButton = form.querySelector('.dialog-submit');
     dialogTitle.textContent = type === 'detail' ? detail.title : copy[0];
     dialogCopy.textContent = type === 'detail' ? detail.copy : copy[1];
